@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-/* import { addToCart, removeToCart } from '../../../../redux/actions/productAction'; */
 import { BsCart3 } from 'react-icons/bs';
 import { FaDollarSign } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
+import { addToCart } from '../../../../features/cart/cartSlice';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ const ProductCard = ({ product }) => {
   const handleAddProductCart = (product) => {
     dispatch(addToCart(product));
   };
+  
   return (
     <div className="max-w-sm bg-white rounded-lg shadow-md hover:bg-amber-200">
       {pathname.includes("/")&&<div>

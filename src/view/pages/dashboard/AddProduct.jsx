@@ -1,7 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import addProductData from '../../../redux/thunk/products/addProduct';
+import { postProduct } from '../../../features/products/productSlices';
+
 
 const AddProduct = () => {
 
@@ -18,7 +19,7 @@ const AddProduct = () => {
       spec: [data.keyFeature1, data.keyFeature2, data.keyFeature3, data.keyFeature4]
     };
     console.log(product);
-    dispatch(addProductData(product));
+    dispatch(postProduct(product));
     console.log('data added');
   };
 

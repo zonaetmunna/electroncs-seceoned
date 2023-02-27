@@ -6,16 +6,18 @@ import Sidebar from '../../components/main/sidebar/Sidebar';
 import Products from '../../components/main/products/Products';
 import MiddleBanner from '../../components/main/home/MiddleBanner';
 import DiscountBanner from '../../components/common/DiscountBanner/DiscountBanner';
+import { getProducts } from '../../../features/products/productSlices';
 
 
 
 const Home = () => {
   const products = useSelector(state => state.products.products);
   console.log(products);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadProductsdata())
-  }, [dispatch]);
+  const dispatch=useDispatch();
+
+  useEffect(()=>{
+    dispatch(getProducts());
+  },[dispatch])
 
   return (
     <div className='px-2'>

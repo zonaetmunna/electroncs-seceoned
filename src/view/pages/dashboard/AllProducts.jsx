@@ -1,17 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import deleteProductData from '../../../redux/thunk/products/deleteProduct';
-import loadProductsdata from '../../../redux/thunk/products/fetachProduct';
 import toast, { Toaster } from 'react-hot-toast';
+import { deleteProduct, getProducts } from '../../../features/products/productSlices';
 
 
 const AllProducts = () => {
 
   const dispatch = useDispatch();
   const products = useSelector(state => state.products.products);
-  useEffect(() => {
-    dispatch(loadProductsdata(products));
-  }, [dispatch]);
+
+  useEffect(()=>{
+    dispatch(getProducts());
+  },[dispatch]);
+
+
 
   return (
     <div class='flex flex-col justify-center items-center h-full w-full '>
@@ -71,7 +73,7 @@ const AllProducts = () => {
                   </td>
                   <td class='p-2'>
                     <div class='flex justify-center'>
-                      <button onClick={() => dispatch(deleteProductData(_id))}>
+                      <button onClick={() => dispatch(deleteProduct(_id))}>
                         <svg
                           class='w-8 h-8 hover:text-blue-600 rounded-full hover:bg-gray-100 p-1'
                           fill='none'

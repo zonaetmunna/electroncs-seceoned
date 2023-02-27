@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { removeToCart } from '../../../redux/actions/productAction';
+import { removeFromCart } from '../../../features/cart/cartSlice';
 
 const Cart = () => {
 
@@ -10,7 +10,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   // remove product from cart
   const handleRemoveProductCart = (_id) => {
-    dispatch(removeToCart(_id));
+    dispatch(removeFromCart(_id));
   };
 
   return (
