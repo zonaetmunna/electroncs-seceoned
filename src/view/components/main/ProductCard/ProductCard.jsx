@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { addToCart, removeToCart } from '../../../../redux/actions/productAction';
+/* import { addToCart, removeToCart } from '../../../../redux/actions/productAction'; */
 import { BsCart3 } from 'react-icons/bs';
 import { FaDollarSign } from 'react-icons/fa';
 import Rating from 'react-rating';
